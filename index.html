@@ -210,27 +210,37 @@
       } catch (error) {
         console.error(error);
         alert("Erreur : " + error.message);
-      } finally {
+      } finally 
+    document.querySelector('#uploadForm').onsubmit = handleUpload;{
         btn.innerText = "Envoyer pour Validation";
         btn.disabled = false;
       }
     }
 
-    document.querySelector('#uploadForm').onsubmit = handleUpload;
 
-    db.collection("projets").where("status", "==", "approved")
+   db.collection("projets").where("status", "==", "approved")
       .orderBy("createdAt", "desc")
       .onSnapshot((snapshot) => {
         const gallery = document.querySelector('.gallery');
+        
         snapshot.docChanges().forEach((change) => {
           if (change.type === "added") {
             const data = change.doc.data();
-            const img = document.createElement('img');
-            img.src = data.imageUrl;
-            img.alt = "Réalisation Urban Timber";
-            gallery.prepend(img);
+            
+            // التأكد من وجود رابط الصورة
+            if (data.imageUrl) {
+                const img = document.createElement('img');
+                img.src = data.imageUrl;
+                img.alt = "Réalisation Urban Timber";
+                
+                // إضافة الصورة في بداية المعرض
+                gallery.prepend(img);
+            }
           }
         });
+      }, (error) => {
+          // هذا الجزء سيخبرك في الـ Console إذا كان هناك نقص في الـ Index
+          console.error("Erreur Gallery:", error.message);
       });
   </script>
 </body>
