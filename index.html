@@ -237,14 +237,28 @@
     }
   }
 
-  // ربط الوظيفة بالنموذج
+// ربط الوظيفة بالنموذج
   document.querySelector('#upload form').onsubmit = handleUpload;
 
-  // وظيفة لجلب الصور المقبولة فقط وعرضها في المعرض
+  // وظيفة لجلب الصور المقبولة فقط وعرضها تلقائياً في المعرض
   db.collection("projets").where("status", "==", "approved")
+    .orderBy("createdAt", "desc")
     .onSnapshot((snapshot) => {
       const gallery = document.querySelector('.gallery');
-      // يمكنك هنا إضافة كود لتحديث المعرض تلقائياً بالصور الجديدة المقبولة
+      
+      snapshot.docChanges().forEach((change) => {
+        if (change.type === "added") {
+          const data = change.doc.data();
+          
+          // إنشاء عنصر الصورة
+          const img = document.createElement('img');
+          img.src = data.imageUrl;
+          img.alt = "Réalisation Urban Timber";
+          
+          // إضافة الصورة في بداية المعرض
+          gallery.prepend(img);
+        }
+      });
     });
 </script>
 </body>
