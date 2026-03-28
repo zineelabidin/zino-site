@@ -23,7 +23,6 @@
       line-height: 1.6;
     }
 
-    /* Navigation */
     nav {
       background: #ffffff;
       padding: 20px 8%;
@@ -43,7 +42,6 @@
     nav ul li a { text-decoration: none; color: var(--primary-color); font-weight: 400; font-size: 13px; text-transform: uppercase; transition: 0.3s; }
     nav ul li a:hover { color: var(--accent-color); }
 
-    /* Hero Section */
     header.hero {
       background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       height: 85vh;
@@ -69,22 +67,18 @@
       font-size: 14px;
     }
 
-    /* Sections */
     section { padding: 100px 10%; }
     section h2 { text-align: center; font-size: 32px; margin-bottom: 60px; text-transform: uppercase; letter-spacing: 1px; }
 
-    /* Services Grid */
     .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
     .card { background: #fff; padding: 50px 30px; text-align: center; border: 1px solid #eee; transition: 0.3s; }
     .card:hover { border-color: var(--accent-color); transform: translateY(-5px); }
     .card h3 { margin-bottom: 15px; font-size: 18px; text-transform: uppercase; }
 
-    /* Gallery */
     .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 15px; }
     .gallery img { width: 100%; height: 350px; object-fit: cover; filter: grayscale(20%); transition: 0.5s; }
     .gallery img:hover { filter: grayscale(0%); transform: scale(1.02); }
 
-    /* Upload Form */
     .upload-container { max-width: 700px; margin: 0 auto; background: #fff; padding: 50px; border: 1px solid #eee; }
     .form-group { margin-bottom: 25px; text-align: left; }
     .form-group label { display: block; margin-bottom: 10px; font-size: 13px; font-weight: 600; text-transform: uppercase; }
@@ -93,7 +87,6 @@
     .btn-submit { width: 100%; padding: 15px; background: var(--primary-color); color: white; border: none; cursor: pointer; text-transform: uppercase; font-weight: 600; transition: 0.3s; }
     .btn-submit:hover { background: var(--accent-color); }
 
-    /* CTA Section */
     .cta { background: #111; color: #fff; text-align: center; padding: 80px 20px; }
     .btn-whatsapp { background: #25D366; color: white; padding: 18px 45px; border: none; border-radius: 50px; font-size: 16px; cursor: pointer; margin-top: 25px; transition: 0.3s; }
 
@@ -107,10 +100,12 @@
 
   <nav>
     <div class="logo">Urban <span>Timber</span></div>
-   <ul>
-  <li><a href="index.html">Accueil</a></li>
-  <li><a href="services.html">Nos Services</a></li> <li><a href="forum.html">Forum</a></li>        <li><a href="#contact">Contact</a></li>
-</ul>
+    <ul>
+      <li><a href="index.html">Accueil</a></li>
+      <li><a href="services.html">Nos Services</a></li>
+      <li><a href="forum.html">Forum</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
   <header class="hero">
@@ -139,125 +134,104 @@
     </div>
   </section>
 
- <section id="gallery">
-    <h2>Nos Dernières Réalisations</h2>
-    <div class="gallery">
-            <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Porte d'entrée en chêne massif">
-      
-            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800" alt="Habillage façade moderne">
-      
-            <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800" alt="Aménagement chambre luxe">
-      
-            <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cuisine design en noyer">
-      
-            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800" alt="Dressing sur mesure">
-      
-            <img src="https://images.unsplash.com/photo-1595515106969-1ce29566ff1c?auto=format&fit=crop&w=800" alt="Bureau d'exception">
-    </div>
-  </section>
+  <section id="gallery">
+    <h2>Nos Dernières Réalisations</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=800&auto=format&fit=crop" alt="Porte">
+      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800" alt="Façade">
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=800" alt="Chambre">
+    </div>
+  </section>
 
-<div class="upload-container">
-  <form id="uploadForm">
-    <div class="form-group">
-      <label>Votre Nom Complet</label>
-      <input type="text" id="userName" placeholder="Ex: Ahmed Alaoui" required>
+  <section id="upload" style="background: #f4f4f4;">
+    <h2>Partagez vos Projets</h2>
+    <div class="upload-container">
+      <form id="uploadForm">
+        <div class="form-group">
+          <label>Votre Nom Complet</label>
+          <input type="text" id="userName" placeholder="Ex: Ahmed Alaoui" required>
+        </div>
+        <div class="form-group">
+          <label>Lien de la photo (URL)</label>
+          <input type="url" id="imgUrl" placeholder="Copiez le lien de l'image ici (Ex: https://...)" required>
+        </div>
+        <button type="submit" class="btn-submit">Envoyer pour Validation</button>
+        <p style="font-size: 11px; color: #888; margin-top: 15px; text-align: center;">
+          * Copiez le lien d'une image depuis Facebook ou WhatsApp et collez-le ici.
+        </p>
+      </form>
     </div>
-    <div class="form-group">
-      <label>Lien de la photo (URL)</label>
-      <input type="url" id="imgUrl" placeholder="Copiez le lien de l'image ici (Ex: https://...)" required>
-    </div>
-    <button type="submit" class="btn-submit">Envoyer pour Validation</button>
-    <p style="font-size: 11px; color: #888; margin-top: 15px; text-align: center;">
-      * Copiez le lien d'une image depuis Facebook ou WhatsApp et collez-le ici.
-    </p>
-  </form>
-</div>
   </section>
 
   <section id="contact" class="cta">
     <h2>Prêt à transformer votre intérieur ?</h2>
-    <p>Discutons ensemble de votre projet de menuiserie.</p>
+    <p>Discutons ensemble de votre projet de menuiserية.</p>
     <button class="btn-whatsapp" onclick="window.location.href='https://wa.me/212666970681'">
       Contactez-nous sur WhatsApp
     </button>
   </section>
 
   <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
 
-<script>
-  const firebaseConfig = {
-    apiKey: "AIzaSyCLmeMTvTFck1NCpdqdI5H8fLc8HIPup1U",
-    authDomain: "urbantimber-ebcec.firebaseapp.com",
-    projectId: "urbantimber-ebcec",
-    storageBucket: "urbantimber-ebcec.firebasestorage.app",
-    appId: "1:586135452772:web:81166e289ad37fa8a5f371"
-  };
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCLmeMTvTFck1NCpdqdI5H8fLc8HIPup1U",
+      authDomain: "urbantimber-ebcec.firebaseapp.com",
+      projectId: "urbantimber-ebcec",
+      storageBucket: "urbantimber-ebcec.firebasestorage.app",
+      appId: "1:586135452772:web:81166e289ad37fa8a5f371"
+    }; // هنا تم إصلاح القوس الناقص
 
-  firebase.initializeApp(firebaseConfig);
-  const db = firebase.firestore();
-  const storage = firebase.storage();
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
 
-  async function handleUpload(event) {
-    event.preventDefault();
-    const file = document.querySelector('input[type="file"]').files[0];
-    const name = document.querySelector('input[type="text"]').value;
-    const btn = event.target.querySelector('button');
+    async function handleUpload(event) {
+      event.preventDefault();
+      const imageUrl = document.querySelector('#imgUrl').value;
+      const name = document.querySelector('#userName').value;
+      const btn = event.target.querySelector('button');
 
-    if(!file || !name) return alert("Veuillez remplir tous les champs !");
-    
-    btn.innerText = "Envoi en cours...";
-    btn.disabled = true;
-
-    try {
-      // 1. رفع الصورة للمخزن
-      const storageRef = storage.ref('projets/' + Date.now() + "_" + file.name);
-      await storageRef.put(file);
-      const url = await storageRef.getDownloadURL();
-
-      // 2. حفظ البيانات في قاعدة البيانات كـ "قيد الانتظار"
-      await db.collection("projets").add({
-        userName: name,
-        imageUrl: url,
-        status: "pending", // لن تظهر في الموقع حتى توافق عليها
-        createdAt: firebase.firestore.FieldValue.serverTimestamp()
-      });
-
-      alert("Merci ! Votre projet sera visible après validation.");
-      event.target.reset();
-    } catch (error) {
-      console.error(error);
-      alert("Erreur lors de l'envoi.");
-    } finally {
-      btn.innerText = "Envoyer pour Validation";
-      btn.disabled = false;
-    }
-  }
-
-// ربط الوظيفة بالنموذج
-  document.querySelector('#upload form').onsubmit = handleUpload;
-
-  // وظيفة لجلب الصور المقبولة فقط وعرضها تلقائياً في المعرض
-  db.collection("projets").where("status", "==", "approved")
-    .orderBy("createdAt", "desc")
-    .onSnapshot((snapshot) => {
-      const gallery = document.querySelector('.gallery');
+      if(!imageUrl || !name) return alert("Veuillez remplir tous les champs !");
       
-      snapshot.docChanges().forEach((change) => {
-        if (change.type === "added") {
-          const data = change.doc.data();
-          
-          // إنشاء عنصر الصورة
-          const img = document.createElement('img');
-          img.src = data.imageUrl;
-          img.alt = "Réalisation Urban Timber";
-          
-          // إضافة الصورة في بداية المعرض
-          gallery.prepend(img);
-        }
+      btn.innerText = "Envoi en cours...";
+      btn.disabled = true;
+
+      try {
+        await db.collection("projets").add({
+          userName: name,
+          imageUrl: imageUrl, 
+          status: "pending", 
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+
+        alert("Merci ZINO ! Votre projet sera visible après validation.");
+        event.target.reset();
+      } catch (error) {
+        console.error(error);
+        alert("Erreur : " + error.message);
+      } finally {
+        btn.innerText = "Envoyer pour Validation";
+        btn.disabled = false;
+      }
+    }
+
+    document.querySelector('#uploadForm').onsubmit = handleUpload;
+
+    db.collection("projets").where("status", "==", "approved")
+      .orderBy("createdAt", "desc")
+      .onSnapshot((snapshot) => {
+        const gallery = document.querySelector('.gallery');
+        snapshot.docChanges().forEach((change) => {
+          if (change.type === "added") {
+            const data = change.doc.data();
+            const img = document.createElement('img');
+            img.src = data.imageUrl;
+            img.alt = "Réalisation Urban Timber";
+            gallery.prepend(img);
+          }
+        });
       });
-    });
-</script>
+  </script>
 </body>
 </html>
