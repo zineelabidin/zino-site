@@ -156,24 +156,22 @@
     </div>
   </section>
 
-  <section id="upload" style="background: #f4f4f4;">
-    <h2>Partagez vos Projets</h2>
-    <div class="upload-container">
-      <form action="#">
-        <div class="form-group">
-          <label>Votre Nom Complet</label>
-          <input type="text" placeholder="Ex: Ahmed Alaoui" required>
-        </div>
-        <div class="form-group">
-          <label>Photos ou Vidéos du Projet</label>
-          <input type="file" accept="image/*,video/*" required>
-        </div>
-        <button type="submit" class="btn-submit">Envoyer pour Validation</button>
-        <p style="font-size: 11px; color: #888; margin-top: 15px; text-align: center;">
-          * Votre publication sera visible sur le site après approbation par notre équipe.
-        </p>
-      </form>
+<div class="upload-container">
+  <form id="uploadForm">
+    <div class="form-group">
+      <label>Votre Nom Complet</label>
+      <input type="text" id="userName" placeholder="Ex: Ahmed Alaoui" required>
     </div>
+    <div class="form-group">
+      <label>Lien de la photo (URL)</label>
+      <input type="url" id="imgUrl" placeholder="Copiez le lien de l'image ici (Ex: https://...)" required>
+    </div>
+    <button type="submit" class="btn-submit">Envoyer pour Validation</button>
+    <p style="font-size: 11px; color: #888; margin-top: 15px; text-align: center;">
+      * Copiez le lien d'une image depuis Facebook ou WhatsApp et collez-le ici.
+    </p>
+  </form>
+</div>
   </section>
 
   <section id="contact" class="cta">
