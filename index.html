@@ -184,5 +184,68 @@
     </button>
   </section>
 
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
+
+<script>
+  const firebaseConfig = {
+    apiKey: "AIzaSyCLmeMTvTFck1NCpdqdI5H8fLc8HIPup1U",
+    authDomain: "urbantimber-ebcec.firebaseapp.com",
+    projectId: "urbantimber-ebcec",
+    storageBucket: "urbantimber-ebcec.firebasestorage.app",
+    appId: "1:586135452772:web:81166e289ad37fa8a5f371"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+  const storage = firebase.storage();
+
+  async function handleUpload(event) {
+    event.preventDefault();
+    const file = document.querySelector('input[type="file"]').files[0];
+    const name = document.querySelector('input[type="text"]').value;
+    const btn = event.target.querySelector('button');
+
+    if(!file || !name) return alert("Veuillez remplir tous les champs !");
+    
+    btn.innerText = "Envoi en cours...";
+    btn.disabled = true;
+
+    try {
+      // 1. رفع الصورة للمخزن
+      const storageRef = storage.ref('projets/' + Date.now() + "_" + file.name);
+      await storageRef.put(file);
+      const url = await storageRef.getDownloadURL();
+
+      // 2. حفظ البيانات في قاعدة البيانات كـ "قيد الانتظار"
+      await db.collection("projets").add({
+        userName: name,
+        imageUrl: url,
+        status: "pending", // لن تظهر في الموقع حتى توافق عليها
+        createdAt: firebase.firestore.FieldValue.serverTimestamp()
+      });
+
+      alert("Merci ! Votre projet sera visible après validation.");
+      event.target.reset();
+    } catch (error) {
+      console.error(error);
+      alert("Erreur lors de l'envoi.");
+    } finally {
+      btn.innerText = "Envoyer pour Validation";
+      btn.disabled = false;
+    }
+  }
+
+  // ربط الوظيفة بالنموذج
+  document.querySelector('#upload form').onsubmit = handleUpload;
+
+  // وظيفة لجلب الصور المقبولة فقط وعرضها في المعرض
+  db.collection("projets").where("status", "==", "approved")
+    .onSnapshot((snapshot) => {
+      const gallery = document.querySelector('.gallery');
+      // يمكنك هنا إضافة كود لتحديث المعرض تلقائياً بالصور الجديدة المقبولة
+    });
+</script>
 </body>
 </html>
