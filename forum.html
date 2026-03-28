@@ -2,46 +2,152 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum Communautaire | Urban Timber</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Montserrat', sans-serif; background: #f4f4f4; margin: 0; }
-        .forum-header { background: #1a1a1a; color: white; padding: 40px; text-align: center; }
-        .forum-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
-        .post { background: white; padding: 25px; margin-bottom: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .post h3 { margin-top: 0; color: #b08968; }
-        .post-meta { font-size: 12px; color: #888; }
-        .add-post { background: white; padding: 25px; border-radius: 8px; margin-bottom: 40px; }
-        input, textarea { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
-        button { background: #b08968; color: white; border: none; padding: 12px 25px; cursor: pointer; border-radius: 4px; font-weight: 600; }
+        :root {
+            --primary-color: #1a1a1a;
+            --accent-color: #b08968;
+            --bg-color: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            color: #333;
+        }
+
+        /* Header */
+        .forum-header {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=1500&q=80') center/cover;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .forum-header h1 { margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+        .forum-header p { font-weight: 300; opacity: 0.9; }
+
+        .container { max-width: 900px; margin: -40px auto 50px auto; padding: 0 20px; }
+
+        /* Formulaire d'ajout */
+        .add-post-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .add-post-card h3 { margin-top: 0; color: var(--primary-color); border-bottom: 2px solid var(--accent-color); display: inline-block; padding-bottom: 5px; }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            background: #fafafa;
+            font-family: inherit;
+        }
+
+        .btn-publish {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-publish:hover { background: var(--primary-color); }
+
+        /* Posts List */
+        .post-item {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .post-item:hover { transform: scale(1.01); }
+
+        .post-user { display: flex; align-items: center; margin-bottom: 15px; }
+        .user-avatar { width: 40px; height: 40px; background: #ddd; border-radius: 50%; margin-right: 12px; display: flex; align-items: center; justify-content: center; font-weight: bold; color: #666; }
+        
+        .post-content h4 { margin: 0 0 10px 0; color: var(--primary-color); font-size: 18px; }
+        .post-content p { color: #666; font-size: 14px; margin-bottom: 15px; }
+
+        .post-footer { font-size: 12px; color: #aaa; border-top: 1px solid #f5f5f5; padding-top: 10px; display: flex; justify-content: space-between; }
+
+        .back-link { display: inline-block; margin-top: 30px; text-decoration: none; color: var(--primary-color); font-weight: 600; font-size: 14px; }
+        .back-link:hover { color: var(--accent-color); }
     </style>
 </head>
 <body>
+
     <div class="forum-header">
-        <h1>Forum Urban Timber</h1>
-        <p>Partagez vos idées et posez vos questions sur la menuiserie</p>
-        <a href="index.html" style="color:white; text-decoration:none; font-size:13px;">← Retour à l'accueil</a>
+        <h1>Espace Communauté</h1>
+        <p>Discutez design, bois et aménagement intérieur avec Urban Timber</p>
     </div>
 
-    <div class="forum-container">
-        <div class="add-post">
-            <h3>Démarrer une discussion</h3>
-            <input type="text" placeholder="Sujet de votre message">
-            <textarea rows="4" placeholder="Votre message ou idée..."></textarea>
-            <button>Publier</button>
+    <div class="container">
+        <div class="add-post-card">
+            <h3>Nouvelle Discussion</h3>
+            <form action="#">
+                <input type="text" placeholder="Sujet de votre question (ex: Quel bois pour ma terrasse ?)" required>
+                <textarea rows="4" placeholder="Détaillez votre idée ou votre besoin..." required></textarea>
+                <button type="submit" class="btn-publish">Publier le message</button>
+            </form>
         </div>
 
-        <div class="post">
-            <div class="post-meta">Par Ahmed - il y a 2 heures</div>
-            <h3>Quelle essence de bois pour une table extérieure ?</h3>
-            <p>J'hésite entre le chêne et le cèdre pour ma terrasse à Sidi Bouknadel. Des conseils ?</p>
+        <div class="post-item">
+            <div class="post-user">
+                <div class="user-avatar">A</div>
+                <div>
+                    <strong>Anas de Salé</strong>
+                    <div style="font-size: 11px; color: #999;">Il y a 3 heures</div>
+                </div>
+            </div>
+            <div class="post-content">
+                <h4>Entretien des meubles en chêne</h4>
+                <p>Bonjour, j'ai une table en chêne massif et j'aimerais savoir quel type d'huile vous conseillez pour la protéger sans changer sa couleur naturelle ? Merci !</p>
+            </div>
+            <div class="post-footer">
+                <span>💬 4 réponses</span>
+                <span>🏷️ Conseil Technique</span>
+            </div>
         </div>
 
-        <div class="post">
-            <div class="post-meta">Par Sarah - il y a 1 jour</div>
-            <h3>Conseils décoration : Salon moderne</h3>
-            <p>J'ai adoré les réalisations d'Urban Timber sur les habillages muraux !</p>
+        <div class="post-item">
+            <div class="post-user">
+                <div class="user-avatar">M</div>
+                <div>
+                    <strong>Meryem K.</strong>
+                    <div style="font-size: 11px; color: #999;">Hier à 14:30</div>
+                </div>
+            </div>
+            <div class="post-content">
+                <h4>Inspiration : Cuisine moderne</h4>
+                <p>Je viens de voir vos réalisations de cuisines à Sidi Bouknadel, le mélange bois et noir mat est magnifique ! Est-ce adaptable pour un petit appartement ?</p>
+            </div>
+            <div class="post-footer">
+                <span>💬 2 réponses</span>
+                <span>🏷️ Design</span>
+            </div>
         </div>
+
+        <center>
+            <a href="index.html" class="back-link">← Retour vers la page d'accueil</a>
+        </center>
     </div>
+
 </body>
 </html>
