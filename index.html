@@ -1,49 +1,75 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="fr">
 <head>
 <meta charset="UTF-8">
 <title>Urban Timber</title>
 
 <style>
 body {
-  font-family: Arial;
   margin: 0;
-  background: #f4f4f4;
-  text-align: center;
+  font-family: 'Arial';
+  background: #f5f5f5;
 }
 
 header {
+  background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover;
+  height: 400px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+header h1 {
+  font-size: 50px;
+  margin: 0;
+}
+
+header p {
+  font-size: 20px;
+}
+
+section {
+  padding: 40px;
+  text-align: center;
+}
+
+.services, .gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  margin: 15px;
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.gallery img {
+  width: 300px;
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.cta {
   background: #5a3e2b;
   color: white;
   padding: 40px;
 }
 
-h1 {margin: 0;}
-
-section {
-  margin: 30px;
-}
-
-img {
-  width: 280px;
-  margin: 10px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-img:hover {
-  transform: scale(1.05);
-}
-
-.whatsapp {
-  display: inline-block;
-  margin-top: 20px;
+button {
   padding: 15px 25px;
   background: #25D366;
   color: white;
-  text-decoration: none;
+  border: none;
   border-radius: 10px;
   font-size: 18px;
+  cursor: pointer;
 }
 </style>
 </head>
@@ -52,47 +78,38 @@ img:hover {
 
 <header>
 <h1>Urban Timber</h1>
-<p>نجارة عصرية | جودة عالية | تصاميم حسب الطلب</p>
+<p>Menuiserie moderne à Salé - Sidi Bouknadel</p>
 </header>
 
 <section>
-<h2>📍 الموقع</h2>
-<p>سلا - سيدي بوكنادل</p>
-</section>
+<h2>Nos Services</h2>
 
-<section>
-<h2>🪵 خدماتنا</h2>
-<p>تفصيل أبواب - خزائن - مطابخ - ديكور خشبي عصري</p>
-</section>
-
-<section>
-<h2>🖼️ معرض الأعمال</h2>
-
-<img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=400">
-<img src="https://images.unsplash.com/photo-1582582494700-1e3d2d2c6d2e?w=400">
-<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400">
+<div class="services">
+<div class="card">Portes en bois sur mesure</div>
+<div class="card">Placards modernes</div>
+<div class="card">Cuisines personnalisées</div>
+<div class="card">Décoration bois</div>
+</div>
 
 </section>
 
 <section>
-<h2>🎥 فيديو من أعمالنا</h2>
+<h2>Nos Réalisations</h2>
 
-<iframe width="300" height="200"
-src="https://www.youtube.com/embed/jfKfPfyJRdk"
-frameborder="0" allowfullscreen>
-</iframe>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1582582494700-1e3d2d2c6d2e">
+<img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c">
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85">
+</div>
 
 </section>
 
-<section>
-<h2>📞 تواصل معنا</h2>
-
-<p>رقم الهاتف: سيتم إضافته قريباً</p>
-
-<a class="whatsapp" href="#">
-تواصل عبر واتساب (قريباً)
-</a>
-
+<section class="cta">
+<h2>Contactez-nous</h2>
+<p>Disponible pour tous vos projets de menuiserie</p>
+<button onclick="window.location.href='#'">
+WhatsApp (bientôt disponible)
+</button>
 </section>
 
 </body>
