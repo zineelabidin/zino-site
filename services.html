@@ -1,120 +1,280 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Services | Urban Timber</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <style>
-        :root { --primary: #121212; --accent: #b08968; --bg: #ffffff; --light: #f8f8f8; }
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); color:#333; line-height: 1.6; }
-        
-        /* Nav */
-        nav { background: #fff; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
-        .logo { font-family:'Playfair Display'; font-size:20px; font-weight:700; text-transform: uppercase; }
-        .logo span { color: var(--accent); }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Timber | L'Art de la Menuiserie</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #121212;
+      --accent: #b08968;
+      --bg: #ffffff;
+      --text: #333;
+      --light-gray: #f8f8f8;
+    }
 
-        /* Hero */
-        .hero-small { 
-            height: 40vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?q=80&w=1200'); /* صورة هيرو فخمة ومباشرة */
-            background-size: cover;
-            background-position: center;
-            color: white; 
-            display: flex;
-            flex-direction: column;
-            align-items: center; 
-            justify-content: center;
-            text-align: center; 
-        }
-        .hero-small h1 { font-family: 'Playfair Display'; font-size: 36px; margin-bottom: 10px; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: var(--bg); 
+      color: var(--text); 
+      line-height: 1.8; 
+      -webkit-font-smoothing: antialiased;
+    }
 
-        /* Content */
-        .content { padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
-        
-        .box { 
-            background: white; 
-            border-radius: 0px; 
-            overflow: hidden; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
-        }
-        .box:hover { transform: translateY(-10px); }
-        
-        .box img { width: 100%; height: 250px; object-fit: cover; }
-        
-        .box-text { padding: 25px; }
-        .box h2 { color: var(--primary); font-family: 'Playfair Display'; font-size: 24px; margin-bottom: 15px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
-        .box p { color: #666; font-size: 14px; }
+    /* --- Navigation Bar --- */
+    nav {
+      position: fixed; width: 100%; padding: 20px 8%;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(255,255,255,0.9); backdrop-filter: blur(20px);
+      z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .logo { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 22px; font-weight: 700; 
+      letter-spacing: 1px; text-transform: uppercase; 
+      color: var(--primary);
+    }
+    .logo span { color: var(--accent); font-style: italic; font-weight: 400; text-transform: lowercase; }
 
-        .back-btn { 
-            text-decoration: none; 
-            color: var(--primary); 
-            font-weight: 600; 
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block; 
-            margin-top: 40px;
-            padding: 10px 20px;
-            border: 1px solid var(--primary);
-            transition: 0.3s;
-        }
-        .back-btn:hover { background: var(--primary); color: white; }
+    nav ul { display: flex; gap: 35px; list-style: none; }
+    nav a { 
+      text-decoration: none; color: var(--primary); 
+      font-size: 12px; font-weight: 600; 
+      text-transform: uppercase; letter-spacing: 2px; 
+      transition: 0.3s; opacity: 0.8;
+    }
+    nav a:hover { opacity: 1; color: var(--accent); }
 
-        footer { padding: 40px; text-align: center; background: var(--primary); color: #777; font-size: 11px; margin-top: 50px; }
-    </style>
+    /* --- Hero Section --- */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                  url('https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
+    }
+    .hero-content h1 { 
+      font-family: 'Playfair Display', serif; 
+      font-size: clamp(40px, 7vw, 75px); 
+      font-weight: 700; line-height: 1.1; 
+      margin-bottom: 30px;
+    }
+    .hero-content p { 
+      font-size: 14px; text-transform: uppercase; 
+      letter-spacing: 4px; margin-bottom: 15px; 
+      font-weight: 300; opacity: 0.9;
+    }
+    .btn-explore { 
+      display: inline-block; padding: 18px 50px; 
+      background: var(--accent); color: #fff; 
+      text-decoration: none; text-transform: uppercase; 
+      font-size: 11px; font-weight: 600; 
+      letter-spacing: 3px; transition: 0.3s;
+    }
+    .btn-explore:hover { background: #fff; color: var(--primary); transform: translateY(-2px); }
+
+    /* --- General Section Styling --- */
+    section { padding: 120px 10%; }
+    .section-header { text-align: center; max-width: 600px; margin: 0 auto 90px auto; }
+    .section-header h2 { 
+      font-family: 'Playfair Display', serif; 
+      font-size: 42px; font-weight: 700; 
+      color: var(--primary); margin-bottom: 15px;
+    }
+    .section-header p { font-size: 16px; color: #777; font-weight: 300; }
+
+    /* --- Gallery (Masonry & Interactive) --- */
+    .gallery-grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
+      gap: 20px;
+    }
+    .gallery-item { 
+      overflow: hidden; 
+      position: relative; 
+      background: var(--light-gray);
+      border-radius: 2px;
+    }
+    .gallery-item img { 
+      width: 100%; height: 450px; object-fit: cover; 
+      transition: 1s cubic-bezier(0.2, 1, 0.3, 1); 
+      opacity: 0; /* مخفية حتى يتم التحميل بنجاح */
+    }
+    
+    /* الفئة التي تُضاف عند نجاح التحميل */
+    .gallery-item img.loaded { opacity: 1; }
+    .gallery-item:hover img.loaded { transform: scale(1.1); filter: brightness(0.9); }
+
+    /* --- Upload Section --- */
+    .upload-section { background: var(--light-gray); }
+    .upload-box { 
+      max-width: 550px; margin: 0 auto; 
+      background: #fff; padding: 60px; 
+      border-radius: 2px; box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-bottom: 8px; font-weight: 600; }
+    .form-group input { 
+      width: 100%; padding: 18px; border: 1px solid #eee; 
+      outline: none; font-family: inherit; transition: 0.3s;
+    }
+    .form-group input:focus { border-color: var(--accent); }
+    .btn-send { 
+      width: 100%; padding: 20px; background: var(--primary); color: white; 
+      border: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; cursor: pointer; transition: 0.3s;
+    }
+    .btn-send:hover { background: var(--accent); }
+
+    footer { padding: 60px; text-align: center; background: var(--primary); color: rgba(255,255,255,0.4); font-size: 11px; letter-spacing: 2px; text-transform: uppercase;}
+
+    /* WhatsApp */
+    .wa-link { 
+      position: fixed; bottom: 40px; right: 40px; background: #25D366; color: white; 
+      width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 1000; font-size: 28px;
+    }
+
+    @media (max-width: 768px) {
+      nav { flex-direction: column; gap: 15px; padding: 20px; }
+      section { padding: 80px 5%; }
+      .gallery-item { height: 350px; }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">Urban <span>Timber</span></div>
-        <div style="font-size: 11px; font-weight: 600; letter-spacing: 1px;">SALA AL JADIDA / SALÉ</div>
-    </nav>
 
-    <div class="hero-small">
-        <h1>Nos Services</h1>
-        <p style="text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Expertise et Qualité - Menuiserie Fine</p>
+  <nav>
+    <div class="logo">Urban <span>Timber</span></div>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#gallery">Collection</a></li>
+      <li><a href="#upload">Partage</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <p>Artisanat d'Exception</p>
+      <h1>L'Essence du Bois</h1>
+      <a href="#gallery" class="btn-explore">Voir la Collection</a>
     </div>
+  </header>
 
-    <div class="content">
-        <div class="box">
-            <img src="https://images.unsplash.com/photo-1615873968403-89e068629275?q=80&w=600" alt="Cuisines"> 
-            <div class="box-text">
-                <h2>Cuisines Modernes</h2>
-                <p>Conception et installation de cuisines sur mesure, alliant esthétique moderne et fonctionnalité optimale pour votre maison.</p>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=600" alt="Dressings"> 
-            <div class="box-text">
-                <h2>Dressings & Placards</h2>
-                <p>Solutions de rangement intelligentes. Des dressings personnalisés qui maximisent votre espace avec une finition haut de gamme.</p>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=600" alt="Décoration"> 
-            <div class="box-text">
-                <h2>Décoration Intérieure</h2>
-                <p>Habillage mural en bois, plafonds décoratifs et séparation d'espaces pour donner du caractère à vos villas et appartements.</p>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="https://images.unsplash.com/photo-1599619351208-3e6c839d7824?q=80&w=600" alt="Mobilier"> 
-            <div class="box-text">
-                <h2>Mobilier sur Mesure</h2>
-                <p>Tables, consoles, et meubles TV uniques créés selon vos besoins spécifiques et avec les meilleures essences de bois.</p>
-            </div>
-        </div>
+  <section id="gallery">
+    <div class="section-header">
+      <h2>Nos Réalisations</h2>
+      <p>Découvrez notre savoir-faire عبر هذه المجموعة المختارة من تصاميم المطابخ، المكاتب، وغرف النوم الخشبية الفخمة.</p>
     </div>
+    <div class="gallery-grid" id="galleryGrid">
+      </div>
+  </section>
 
-    <div style="text-align: center; padding-bottom: 50px;">
-        <a href="index.html" class="back-btn">← Retour à l'accueil</a>
+  <section id="upload" class="upload-section">
+    <div class="upload-box">
+      <div class="section-header" style="margin-bottom: 40px;">
+        <h2 style="font-size: 28px;">Partagez un Projet</h2>
+      </div>
+      <form id="uploadForm">
+        <div class="form-group">
+          <label>Nom</label>
+          <input type="text" id="userName" placeholder="ZINO" required>
+        </div>
+        <div class="form-group">
+          <label>URL Direct de l'image</label>
+          <input type="url" id="imgUrl" placeholder="https://..." required>
+        </div>
+        <button type="submit" id="submitBtn" class="btn-send">Envoyer pour Validation</button>
+      </form>
     </div>
+  </section>
 
-    <footer>&copy; 2026 URBAN TIMBER | ZINO. TOUS DROITS RÉSERVÉS.</footer>
+  <footer>
+    &copy; 2026 URBAN TIMBER. SALÉ / MOROCCO. ALL RIGHTS RESERVED.
+  </footer>
+
+  <a href="https://wa.me/212666970681" class="wa-link" target="_blank">💬</a>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCLmeMTvTFck1NCpdqdI5H8fLc8HIPup1U",
+      authDomain: "urbantimber-ebcec.firebaseapp.com",
+      projectId: "urbantimber-ebcec",
+      storageBucket: "urbantimber-ebcec.firebasestorage.app",
+      appId: "1:586135452772:web:81166e289ad37fa8a5f371"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // إرسال البيانات
+    document.getElementById('uploadForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.innerText = "ENVOI...";
+      
+      try {
+        await db.collection("projets").add({
+          userName: document.getElementById('userName').value,
+          imageUrl: document.getElementById('imgUrl').value,
+          status: "pending", // تبقى معلقة للمراجعة
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        alert("Merci ZINO ! Reçu.");
+        e.target.reset();
+      } catch (e) { alert(e.message); }
+      btn.innerText = "ENVOYER POUR VALIDATION";
+    };
+
+    // عرض الصور مع آلية "التنظيف الذاتي" (لضمان عمل المعرض 100% ✅)
+    // قمنا بحذفOrderBy مؤقتاً لضمان عمل المعرض فوراً دون Index
+    db.collection("projets").where("status", "==", "approved")
+      .onSnapshot(snapshot => {
+        const gallery = document.getElementById('galleryGrid');
+        gallery.innerHTML = "";
+
+        // في حال عدم وجود صور مقبولة
+        if (snapshot.empty) {
+            gallery.innerHTML = "<p style='text-align:center; color:#999; grid-column: 1/-1;'>Aucun projet approuvé pour le moment.</p>";
+            return;
+        }
+
+        snapshot.forEach(doc => {
+          const data = doc.data();
+          if (data.imageUrl) {
+            const item = document.createElement('div');
+            item.className = 'gallery-item';
+            
+            const img = document.createElement('img');
+            img.src = data.imageUrl;
+            
+            // الآلية الذكية: في حال نجاح التحميل تظهر الصورة بسلاسة
+            img.onload = function() {
+              this.classList.add('loaded');
+            };
+            
+            // الآلية الذكية: في حال فشل التحميل (رابط مكسور) يتم حذف المربع بالكامل
+            // وبهذا لا يظهر أي مشكل عدم ظهور الصورة أبداً فالموقع
+            img.onerror = function() {
+              console.error("Link broken: " + img.src);
+              item.remove(); 
+            };
+
+            item.appendChild(img);
+            gallery.appendChild(item);
+          }
+        });
+      }, err => {
+          console.error("Gallery Error:", err);
+          document.getElementById('galleryGrid').innerHTML = "<p style='text-align:center; color:red; grid-column: 1/-1;'>Erreur lors du chargement de la galerie.</p>";
+      });
+  </script>
 </body>
 </html>
