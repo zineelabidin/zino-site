@@ -10,12 +10,12 @@
     * { margin:0; padding:0; box-sizing:border-box; }
     body { font-family: 'Inter', sans-serif; background: var(--bg); color:#333; scroll-behavior: smooth; }
     
-    /* NAV UPDATED */
+    /* NAV */
     nav { position: fixed; width:100%; padding:15px 5%; display:flex; justify-content:space-between; align-items:center; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index:1000; border-bottom: 1px solid rgba(0,0,0,0.05); }
     .logo { font-family:'Playfair Display'; font-size:20px; font-weight:700; text-transform: uppercase; }
     .logo span { color: var(--accent); }
     nav ul { display:flex; gap:20px; list-style:none; }
-    nav a { text-decoration:none; color: var(--primary); font-size:10px; text-transform:uppercase; letter-spacing: 1.5px; font-weight: 600; transition: 0.3s; }
+    nav a { text-decoration:none; color: var(--primary); font-size:10px; text-transform:uppercase; letter-spacing: 1.5px; font-weight: 600; cursor: pointer; }
     nav a:hover { color: var(--accent); }
 
     /* HERO */
@@ -25,10 +25,32 @@
     /* SECTIONS */
     section { padding:60px 8%; }
     h2 { text-align:center; margin-bottom:40px; font-family:'Playfair Display'; font-size: 30px; }
-    .gallery-grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
-    .gallery-item { background:var(--light); height:400px; overflow:hidden; position: relative; opacity:0; transform:translateY(20px); animation:fadeUp 0.6s forwards; }
-    .gallery-item img { width:100%; height:100%; object-fit:cover; transition: 0.8s; }
-    .gallery-item:hover img { transform:scale(1.1); }
+    
+    .gallery-grid { 
+      display:grid; 
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); 
+      gap: 25px; 
+    }
+    
+    .gallery-item { 
+      background:var(--light); 
+      height:450px; 
+      overflow:hidden; 
+      position: relative;
+      opacity:0; 
+      transform:translateY(20px); 
+      animation:fadeUp 0.6s forwards;
+    }
+    
+    .gallery-item img { 
+      width:100%; 
+      height:100%; 
+      object-fit:cover; 
+      transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1); 
+    }
+    
+    .gallery-item:hover img { transform:scale(1.1); filter: brightness(0.9); }
+
     @keyframes fadeUp { to { opacity:1; transform:translateY(0); } }
 
     /* FORM */
@@ -40,9 +62,7 @@
     .wa { position:fixed; bottom:30px; right:30px; background:#25D366; color:white; width:55px; height:55px; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:22px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 1000; }
     footer { padding: 30px; text-align: center; background: var(--primary); color: #777; font-size: 11px; }
 
-    @media (max-width: 900px) {
-      nav ul { display: none; } /* Hide menu on small mobile or use a burger menu */
-    }
+    @media (max-width: 900px) { nav ul { display: none; } }
   </style>
 </head>
 <body>
@@ -54,20 +74,21 @@
     <li><a href="services.html">Services</a></li>
     <li><a href="forum.html">Forum / منتدى</a></li>
     <li><a href="#gallery">Collection</a></li>
-    <li><a href="zino-admin.html">Admin</a></li>
+    <li><a onclick="checkAdmin()">Admin</a></li>
   </ul>
 </nav>
 
 <header class="hero">
   <div>
-    <h1>L'Artisanat d'Excellence</h1>
-    <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 10px; margin-top: 10px;">Menuiserie Moderne à Salé</p>
+    <h1>Portfolio d'Excellence</h1>
+    <p style="letter-spacing: 2px; text-transform: uppercase; font-size: 10px; margin-top: 10px;">L'artisanat du bois à Salé</p>
   </div>
 </header>
 
 <section id="gallery">
   <h2>Nos Réalisations</h2>
-  <div class="gallery-grid" id="galleryGrid"></div>
+  <div class="gallery-grid" id="galleryGrid">
+    </div>
 </section>
 
 <section id="upload" style="background: var(--light);">
@@ -75,13 +96,13 @@
     <h2>Nouveau Projet</h2>
     <form id="uForm">
       <input type="text" id="pName" placeholder="Votre Nom" required>
-      <input type="url" id="pUrl" placeholder="Lien de l'image (URL)" required>
-      <button type="submit" class="btn">Envoyer</button>
+      <input type="url" id="pUrl" placeholder="URL de l'image" required>
+      <button type="submit" class="btn">Envoyer l'œuvre</button>
     </form>
   </div>
 </section>
 
-<footer>&copy; 2026 URBAN TIMBER | ZINO. ALL RIGHTS RESERVED.</footer>
+<footer>&copy; 2026 URBAN TIMBER | ZINO. TOUS DROITS RÉSERVÉS.</footer>
 
 <a href="https://wa.me/212666970681" class="wa" target="_blank">💬</a>
 
@@ -89,6 +110,19 @@
 <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
 
 <script>
+// دالة التحقق من كلمة المرور لقسم الأدمن
+function checkAdmin() {
+    const password = prompt("Veuillez entrer le mot de passe Admin :");
+    const correctPassword = "ZINO2026"; // يمكنك تغيير كلمة السر هنا يا ZINO
+    
+    if (password === correctPassword) {
+        window.location.href = "zino-admin.html";
+    } else {
+        alert("Mot de passe incorrect ! Access refusé.");
+    }
+}
+
+// Firebase Config
 const firebaseConfig = {
   apiKey: "AIzaSyCLmeMTvTFck1NCpdqdI5H8fLc8HIPup1U",
   authDomain: "urbantimber-ebcec.firebaseapp.com",
@@ -100,25 +134,49 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// روابط صور جديدة وموثوقة لإنهاء مشكلة الصور المكسورة
+// القائمة المحدثة بـ 20 صورة فخمةومتنوعة (مطبخ، مكتب، غرف نوم، صالونات)
 const initialImages = [
-  "https://images.unsplash.com/photo-1556912177-466f98ce89ae?q=80&w=600",
-  "https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=600",
-  "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=600",
-  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=600"
+  "https://images.unsplash.com/photo-1556912177-466f98ce89ae?q=80&w=800", // Cuisine 1
+  "https://images.unsplash.com/photo-1510798831971-661eb04b3739?q=80&w=800", // Bureau 1
+  "https://images.unsplash.com/photo-1595428774223-ef52624120d2?q=80&w=800", // Chambre 1
+  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?q=80&w=800", // Cuisine 2
+  "https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=800", // Salon Wood
+  "https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=800", // Dressing
+  "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?q=80&w=800", // Bureau 2
+  "https://images.unsplash.com/photo-1599619351208-3e6c839d7824?q=80&w=800", // Table 1
+  "https://images.unsplash.com/photo-1544457070-4cd773b4d71e?q=80&w=800", // Meuble TV
+  "https://images.unsplash.com/photo-1565410329381-891481e3217d?q=80&w=800", // Wood detail
+  "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=800", // Chambre 2
+  "https://images.unsplash.com/photo-1615873968403-89e068629275?q=80&w=800", // Cuisine 3
+  "https://images.unsplash.com/photo-1592595820246-fe01dfadad7f?q=80&w=800", // Shelf
+  "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=800", // Modern Kitchen
+  "https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=800", // Work desk
+  "https://images.unsplash.com/photo-1540638349517-3abd5afc5847?q=80&w=800", // Bureau 3
+  "https://images.unsplash.com/photo-1584622781564-1d9876a13d1e?q=80&w=800", // Cuisine 4
+  "https://images.unsplash.com/photo-1594231260756-319983995f51?q=80&w=800", // Bed detail
+  "https://images.unsplash.com/photo-1541123351-9c6065586616?q=80&w=800", // Table wood detail
+  "https://images.unsplash.com/photo-1549497538-303791108f94?q=80&w=800"  // Sofa wood trim
 ];
 
 function loadGallery() {
   const grid = document.getElementById('galleryGrid');
   grid.innerHTML = "";
+
+  // 1. عرض الـ 20 صورة الأساسية
   initialImages.forEach(url => addImg(url));
 
-  db.collection("projets").where("status", "==", "approved").onSnapshot(snapshot => {
-    snapshot.forEach(doc => {
-      const url = doc.data().imageUrl;
-      if (!initialImages.includes(url)) { addImg(url); }
+  // 2. عرض الصور المعتمدة من Firebase
+  db.collection("projets")
+    .where("status", "==", "approved")
+    .onSnapshot(snapshot => {
+      snapshot.forEach(doc => {
+        const url = doc.data().imageUrl;
+        // نتحقق لمنع تكرار الصور الموجودة أصلاً
+        if (!initialImages.includes(url)) {
+            addImg(url);
+        }
+      });
     });
-  });
 }
 
 function addImg(url) {
@@ -126,16 +184,21 @@ function addImg(url) {
   item.className = "gallery-item";
   const img = document.createElement('img');
   img.src = url;
+  
+  // الآلية الذكية: في حال فشل التحميل (رابط مكسور) يتم حذف المربع بالكامل
   img.onerror = () => item.remove();
+  
   item.appendChild(img);
   document.getElementById('galleryGrid').appendChild(item);
 }
 
+// Upload Function
 document.getElementById('uForm').onsubmit = async (e) => {
   e.preventDefault();
   const btn = e.target.querySelector('button');
   btn.innerText = "Envoi...";
   btn.disabled = true;
+
   try {
     await db.collection("projets").add({
       userName: document.getElementById('pName').value,
@@ -146,6 +209,7 @@ document.getElementById('uForm').onsubmit = async (e) => {
     alert("Projet envoyé ! Merci ZINO.");
     e.target.reset();
   } catch(err) { alert(err.message); }
+  
   btn.innerText = "Envoyer";
   btn.disabled = false;
 };
