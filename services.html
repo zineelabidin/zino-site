@@ -3,22 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Services | Urban Timber</title>
+    <title>Nos Services | Urban Timber - L'Excellence du Bois</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
         :root { --primary: #121212; --accent: #b08968; --bg: #ffffff; --light: #f8f8f8; }
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color:#333; line-height: 1.6; }
         
-        /* Nav */
         nav { background: #fff; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
         .logo { font-family:'Playfair Display'; font-size:20px; font-weight:700; text-transform: uppercase; }
         .logo span { color: var(--accent); }
 
-        /* Hero */
         .hero-small { 
             height: 40vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?q=80&w=1200'); /* صورة هيرو فخمة ومباشرة */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581417478175-a9ef18f210c1?q=80&w=1200');
             background-size: cover;
             background-position: center;
             color: white; 
@@ -30,36 +28,26 @@
         }
         .hero-small h1 { font-family: 'Playfair Display'; font-size: 36px; margin-bottom: 10px; }
 
-        /* Content */
-        .content { padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
+        .content { padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         
         .box { 
             background: white; 
             border-radius: 0px; 
             overflow: hidden; 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
             transition: 0.3s;
         }
         .box:hover { transform: translateY(-10px); }
+        .box img { width: 100%; height: 260px; object-fit: cover; background: #eee; }
         
-        .box img { width: 100%; height: 250px; object-fit: cover; }
-        
-        .box-text { padding: 25px; }
-        .box h2 { color: var(--primary); font-family: 'Playfair Display'; font-size: 24px; margin-bottom: 15px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
-        .box p { color: #666; font-size: 14px; }
+        .box-text { padding: 20px; text-align: center; }
+        .box h2 { color: var(--primary); font-family: 'Playfair Display'; font-size: 20px; margin-bottom: 10px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
+        .box p { color: #666; font-size: 13px; }
 
         .back-btn { 
-            text-decoration: none; 
-            color: var(--primary); 
-            font-weight: 600; 
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block; 
-            margin-top: 40px;
-            padding: 10px 20px;
-            border: 1px solid var(--primary);
-            transition: 0.3s;
+            text-decoration: none; color: var(--primary); font-weight: 600; font-size: 11px;
+            text-transform: uppercase; letter-spacing: 2px; display: inline-block; 
+            margin: 40px auto; padding: 12px 24px; border: 1px solid var(--primary); transition: 0.3s;
         }
         .back-btn:hover { background: var(--primary); color: white; }
 
@@ -67,57 +55,103 @@
     </style>
 </head>
 <body>
+    <nav>
+        <div class="logo">Urban <span>Timber</span></div>
+        <div style="font-size: 11px; font-weight: 600; letter-spacing: 1px;">SALA AL JADIDA / SALÉ</div>
+    </nav>
 
-<nav>
-  <div class="logo">Urban <span>Timber</span></div>
-  <div style="font-size: 11px; font-weight: 600; letter-spacing: 1px;">SALA AL JADIDA / SALÉ</div>
-</nav>
-
-<header class="hero-small">
-  <div>
-    <h1>Nos Services</h1>
-    <p style="text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Expertise et Qualité - Menuiserie Fine</p>
-  </div>
-</header>
-
-<div class="content">
-  <div class="box">
-    <img src="https://images.unsplash.com/photo-1615873968403-89e068629275?q=80&w=600" alt="Cuisines"> 
-    <div class="box-text">
-      <h2>Cuisines Modernes</h2>
-      <p>Conception et installation de cuisines sur mesure, alliant esthétique moderne et fonctionnalité optimale pour votre maison.</p>
+    <div class="hero-small">
+        <h1>Nos Services</h1>
+        <p style="text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">20 Prestations de Menuiserie Fine</p>
     </div>
-  </div>
 
-  <div class="box">
-    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=600" alt="Dressings"> 
-    <div class="box-text">
-      <h2>Dressings & Placards</h2>
-      <p>Solutions de rangement intelligentes. Des dressings personnalisés qui maximisent votre espace avec une finition haut de gamme.</p>
+    <div class="content">
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1556912177-466f98ce89ae?q=80&w=800" alt="Cuisine">
+            <div class="box-text"><h2>Cuisines Modernes</h2><p>Cuisines équipées sur mesure.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1558603668-6570496b66f8?q=80&w=800" alt="Dressing">
+            <div class="box-text"><h2>Dressings & Placards</h2><p>Maximisez votre espace.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800" alt="Salon">
+            <div class="box-text"><h2>Décoration Intérieure</h2><p>Habillage mural et plafonds.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=800" alt="Mobilier">
+            <div class="box-text"><h2>Mobilier Design</h2><p>Tables et consoles uniques.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=800" alt="Portes Entrée">
+            <div class="box-text"><h2>Portes d'Entrée</h2><p>Sécurité et esthétique.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=800" alt="Bureau">
+            <div class="box-text"><h2>Espaces Bureau</h2><p>Aménagement professionnel.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=800" alt="Chambre">
+            <div class="box-text"><h2>Chambres Coucher</h2><p>Lits massifs personnalisés.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=800" alt="Escaliers">
+            <div class="box-text"><h2>Escaliers en Bois</h2><p>Conception robuste.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1506190503927-4467c6999b1a?q=80&w=800" alt="Portes Intérieures">
+            <div class="box-text"><h2>Portes Intérieures</h2><p>Harmonisez votre intérieur.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?q=80&w=800" alt="Bibliothèque">
+            <div class="box-text"><h2>Bibliothèques</h2><p>Rangement pour livres.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1540518614846-7eded433c457?q=80&w=800" alt="Salon Bois">
+            <div class="box-text"><h2>Salons en Bois</h2><p>Ambiance marocaine chaleureuse.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1565410329381-891481e3217d?q=80&w=800" alt="Meuble TV">
+            <div class="box-text"><h2>Meubles TV</h2><p>Solutions multimédia modernes.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1583321500900-82807e458f3c?q=80&w=800" alt="Table Basse">
+            <div class="box-text"><h2>Tables Basse</h2><p>Tables uniques pour salons.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800" alt="Meuble Bain">
+            <div class="box-text"><h2>Meubles de Bain</h2><p>Rangement pour salle de bain.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=800" alt="Console">
+            <div class="box-text"><h2>Consoles Déco</h2><p>Entrées fâmées sur mesure.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1560185007-cde436f6a4d0?q=80&w=800" alt="Enfants">
+            <div class="box-text"><h2>Lits Enfants</h2><p>Lits créatifs et sûrs.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=800" alt="Magasin">
+            <div class="box-text"><h2>Agencement Magasins</h2><p>Aménagement commercial.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1595828774223-ef52624120d2?q=80&w=800" alt="Garage">
+            <div class="box-text"><h2>Rangements Garage</h2><p>Optimisation fonctionnelle.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1594231260756-319983995f51?q=80&w=800" alt="Mobilier Extérieur">
+            <div class="box-text"><h2>Mobilier Extérieur</h2><p>Terrasses et jardins.</p></div>
+        </div>
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1549497538-303791108f94?q=80&w=800" alt="Bar">
+            <div class="box-text"><h2>Bar & Comptoire</h2><p>Aménagement d'espace bar.</p></div>
+        </div>
     </div>
-  </div>
 
-  <div class="box">
-    <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=600" alt="Décoration"> 
-    <div class="box-text">
-      <h2>Décoration Intérieure</h2>
-      <p>Habillage mural en bois, plafonds décoratifs et séparation d'espaces pour donner du caractère à vos villas et appartements.</p>
+    <div style="text-align: center; padding-bottom: 50px;">
+        <a href="index.html" class="back-btn">← Retour à l'accueil</a>
     </div>
-  </div>
 
-  <div class="box">
-    <img src="https://images.unsplash.com/photo-1599619351208-3e6c839d7824?q=80&w=600" alt="Mobilier"> 
-    <div class="box-text">
-      <h2>Mobilier sur Mesure</h2>
-      <p>Tables, consoles, et meubles TV uniques créés selon vos besoins spécifiques et avec les meilleures essences de bois.</p>
-    </div>
-  </div>
-</div>
-
-<div style="text-align: center; padding-bottom: 50px;">
-  <a href="index.html" class="back-btn">← Retour à l'accueil</a>
-</div>
-
-<footer>&copy; 2026 URBAN TIMBER | ZINO. TOUS DROITS RÉSERVÉS.</footer>
+    <footer>&copy; 2026 URBAN TIMBER | ZINO. TOUS DROITS RÉSERVÉS.</footer>
 </body>
 </html>
