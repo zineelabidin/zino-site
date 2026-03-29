@@ -1,211 +1,68 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Urban Timber | Menuiserie Moderne</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Urban Timber | Menuiserie Moderne & Design</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary-color: #1a1a1a;
+      --accent-color: #b08968;
+      --light-bg: #fdfdfd;
+      --text-color: #444;
+    }
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-<style>
-:root {
-  --primary-color: #1a1a1a;
-  --accent-color: #b08968;
-  --light-bg: #fdfdfd;
-}
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--light-bg);
+      color: var(--text-color);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
 
-* {margin:0; padding:0; box-sizing:border-box;}
+    /* NAVBAR */
+    nav {
+      background: #fff;
+      padding: 20px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-body {
-  font-family: 'Montserrat', sans-serif;
-  background: var(--light-bg);
-}
+    .logo { font-weight: 600; font-size: 22px; text-transform: uppercase; letter-spacing: 2px; }
+    .logo span { color: var(--accent-color); }
 
-nav {
-  background: #fff;
-  padding: 20px 8%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+    nav ul { display: flex; gap: 25px; list-style: none; }
+    nav ul li a { text-decoration: none; color: var(--primary-color); font-size: 13px; font-weight: 400; text-transform: uppercase; transition: 0.3s; }
+    nav ul li a:hover { color: var(--accent-color); }
 
-.logo {font-weight:600;}
-.logo span {color: var(--accent-color);}
+    /* HERO SECTION */
+    .hero {
+      height: 85vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+    }
 
-nav ul {display:flex; gap:20px; list-style:none;}
-nav a {text-decoration:none; color:#000;}
+    .hero h1 { font-size: clamp(32px, 5vw, 60px); font-weight: 600; margin-bottom: 20px; text-transform: uppercase; }
+    .hero p { font-size: 18px; font-weight: 300; margin-bottom: 30px; }
 
-.hero {
-  height: 80vh;
-  background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e') center/cover;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:white;
-  text-align:center;
-}
+    /* SECTIONS */
+    section { padding: 100px 10%; }
+    h2 { text-align: center; font-size: 32px; margin-bottom: 60px; text-transform: uppercase; letter-spacing: 1px; }
 
-section {padding:80px 10%;}
-
-.services {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
-
-.card {
-  background:white;
-  padding:30px;
-  text-align:center;
-  transition:0.3s;
-}
-
-.card:hover {
-  transform: translateY(-10px) scale(1.03);
-  box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-.gallery {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:15px;
-}
-
-.gallery img {
-  width:100%;
-  height:300px;
-  object-fit:cover;
-  opacity:0;
-  transform:translateY(30px);
-  animation:fadeUp 0.6s forwards;
-}
-
-@keyframes fadeUp {
-  to {opacity:1; transform:translateY(0);}
-}
-
-.upload {
-  background:#eee;
-  padding:40px;
-  text-align:center;
-}
-
-input {
-  padding:10px;
-  margin:10px;
-  width:80%;
-}
-
-button {
-  padding:15px;
-  background:black;
-  color:white;
-  border:none;
-  cursor:pointer;
-}
-
-.whatsapp-float {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25D366;
-  color:white;
-  padding:15px;
-  border-radius:50%;
-  font-size:20px;
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-<div class="logo">Urban <span>Timber</span></div>
-<ul>
-<li><a href="#">Accueil</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#gallery">Réalisations</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-
-<div class="hero">
-<div>
-<h1>L'Excellence du Bois</h1>
-<p>Menuiserie à Salé & Sidi Bouknadel</p>
-</div>
-</div>
-
-<section id="services">
-<h2>Nos Services</h2>
-<div class="services">
-<div class="card">Portes sur mesure</div>
-<div class="card">Placards modernes</div>
-<div class="card">Cuisines personnalisées</div>
-</div>
-</section>
-
-<section id="gallery">
-<h2>Réalisations</h2>
-<div class="gallery"></div>
-</section>
-
-<section class="upload">
-<h2>Ajouter une photo</h2>
-<form id="uploadForm">
-<input type="text" id="userName" placeholder="Votre nom" required><br>
-<input type="url" id="imgUrl" placeholder="Lien image" required><br>
-<button type="submit">Envoyer</button>
-</form>
-</section>
-
-<section id="contact">
-<h2>Contact</h2>
-<button onclick="window.location.href='https://wa.me/212666970681'">WhatsApp</button>
-</section>
-
-<a href="https://wa.me/212666970681" class="whatsapp-float">💬</a>
-
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
-
-<script>
-const firebaseConfig = {
-  apiKey: "YOUR_KEY",
-  authDomain: "YOUR_DOMAIN",
-  projectId: "YOUR_ID"
-};
-
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
-
-document.querySelector('#uploadForm').onsubmit = handleUpload;
-
-async function handleUpload(e){
-  e.preventDefault();
-
-  const name = document.getElementById('userName').value;
-  const url = document.getElementById('imgUrl').value;
-
-  await db.collection("projets").add({
-    userName: name,
-    imageUrl: url,
-    status: "approved",
-    createdAt: firebase.firestore.FieldValue.serverTimestamp()
-  });
-
-  alert("Ajouté !");
-}
-
-db.collection("projets").orderBy("createdAt","desc")
-.onSnapshot(snapshot=>{
-  const gallery = document.querySelector('.gallery');
-  gallery.innerHTML = "";
-
-  snapshot.forEach(doc=>{
-    const data = doc.data();
-    const img = document.createElement('img');
-    img.src = data.imageUrl;
-    gallery.appendChild(img);
-  });
-});
-</script>
-
-</body>
-</html>
+    /* SERVICES */
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
+    .card { background: #fff; padding: 50px 30px; text-align: center; border: 1px solid #eee; transition: 0.3s; }
+    .
