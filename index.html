@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Urban Timber | L'Art de la Menuiserie</title>
+  <title>Urban Timber | L'Excellence du Bois</title>
   
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
   
   <style>
     :root {
@@ -20,110 +20,54 @@
     html { scroll-behavior: smooth; }
     
     body { 
-      font-family: 'Inter', sans-serif; 
-      background: var(--bg); 
-      color: var(--text); 
-      line-height: 1.8; 
-      -webkit-font-smoothing: antialiased;
+      font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); 
+      line-height: 1.8; -webkit-font-smoothing: antialiased;
     }
 
-    /* --- Navigation Bar --- */
+    /* Navigation */
     nav {
       position: fixed; width: 100%; padding: 20px 8%;
       display: flex; justify-content: space-between; align-items: center;
       background: rgba(255,255,255,0.9); backdrop-filter: blur(20px);
       z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05);
     }
-    .logo { 
-      font-family: 'Playfair Display', serif; 
-      font-size: 22px; font-weight: 700; 
-      letter-spacing: 1px; text-transform: uppercase; 
-      color: var(--primary);
-    }
+    .logo { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; letter-spacing: 1px; color: var(--primary); text-transform: uppercase; }
     .logo span { color: var(--accent); font-style: italic; font-weight: 400; text-transform: lowercase; }
 
     nav ul { display: flex; gap: 35px; list-style: none; }
-    nav a { 
-      text-decoration: none; color: var(--primary); 
-      font-size: 12px; font-weight: 600; 
-      text-transform: uppercase; letter-spacing: 2px; 
-      transition: 0.3s; opacity: 0.8;
-    }
-    nav a:hover { opacity: 1; color: var(--accent); }
+    nav a { text-decoration: none; color: var(--primary); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+    nav a:hover { color: var(--accent); }
 
-    /* --- Hero Section --- */
+    /* Hero Section */
     .hero {
       height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
                   url('https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
       display: flex; align-items: center; justify-content: center; text-align: center; color: #fff;
     }
-    .hero-content h1 { 
-      font-family: 'Playfair Display', serif; 
-      font-size: clamp(40px, 7vw, 75px); 
-      font-weight: 700; line-height: 1.1; 
-      margin-bottom: 30px;
-    }
-    .hero-content p { 
-      font-size: 14px; text-transform: uppercase; 
-      letter-spacing: 4px; margin-bottom: 15px; 
-      font-weight: 300; opacity: 0.9;
-    }
-    .btn-explore { 
-      display: inline-block; padding: 18px 50px; 
-      background: var(--accent); color: #fff; 
-      text-decoration: none; text-transform: uppercase; 
-      font-size: 11px; font-weight: 600; 
-      letter-spacing: 3px; transition: 0.3s;
-    }
-    .btn-explore:hover { background: #fff; color: var(--primary); transform: translateY(-2px); }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(45px, 7vw, 85px); line-height: 1.1; margin-bottom: 20px; }
+    .hero p { font-size: 14px; text-transform: uppercase; letter-spacing: 5px; font-weight: 300; }
 
-    /* --- General Section Styling --- */
-    section { padding: 120px 10%; }
-    .section-header { text-align: center; max-width: 600px; margin: 0 auto 90px auto; }
-    .section-header h2 { 
-      font-family: 'Playfair Display', serif; 
-      font-size: 42px; font-weight: 700; 
-      color: var(--primary); margin-bottom: 15px;
-    }
+    /* Section Styling */
+    section { padding: 100px 8%; }
+    .section-header { text-align: center; margin-bottom: 80px; }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-size: 42px; color: var(--primary); margin-bottom: 15px; }
     .section-header p { font-size: 16px; color: #777; font-weight: 300; }
 
-    /* --- Gallery (Masonry & Interactive) --- */
+    /* Gallery Grid */
     .gallery-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); 
-      gap: 20px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px; 
     }
     .gallery-item { 
-      overflow: hidden; 
-      position: relative; 
-      background: var(--light-gray);
-      border-radius: 2px;
+      background: var(--light-gray); border-radius: 4px; overflow: hidden; position: relative; height: 450px;
     }
     .gallery-item img { 
-      width: 100%; height: 450px; object-fit: cover; 
-      transition: 1s cubic-bezier(0.2, 1, 0.3, 1); 
-      opacity: 0; /* مخفية حتى يتم التحميل بنجاح */
+      width: 100%; height: 100%; object-fit: cover; transition: 1.2s cubic-bezier(0.2, 1, 0.3, 1); opacity: 0;
     }
-    
-    /* الفئة التي تُضاف عند نجاح التحميل */
     .gallery-item img.loaded { opacity: 1; }
-    .gallery-item:hover img.loaded { transform: scale(1.1); filter: brightness(0.9); }
+    .gallery-item:hover img.loaded { transform: scale(1.1); filter: brightness(0.85); }
 
-    /* --- Upload Section --- */
-    .upload-section { background: var(--light-gray); }
-    .upload-box { 
-      max-width: 550px; margin: 0 auto; 
-      background: #fff; padding: 60px; 
-      border-radius: 2px; box-shadow: 0 10px 40px rgba(0,0,0,0.03);
-    }
-    .form-group { margin-bottom: 20px; }
-    .form-group label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #999; margin-bottom: 8px; font-weight: 600; }
-    .form-group input { 
-      width: 100%; padding: 18px; border: 1px solid #eee; 
-      outline: none; font-family: inherit; transition: 0.3s;
-    }
-    .form-group input:focus { border-color: var(--accent); }
-    .btn-send { 
-      width: 100%; padding: 20px; background: var(--primary); color: white; 
-      border: none;
+    /* Label overlay */
+    .img-tag {
+        position: absolute; bottom: 20px; left: 20px; background: rgba(255,255,255,0.9);
+        padding: 5px 15px; font-size: 10px; text-transform: uppercase; letter-spacing
