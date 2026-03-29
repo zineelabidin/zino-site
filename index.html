@@ -3,66 +3,186 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Urban Timber | Menuiserie Moderne & Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <title>Urban Timber | Excellence du Bois</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   
   <style>
     :root {
-      --primary-color: #1a1a1a;
-      --accent-color: #b08968;
-      --light-bg: #fdfdfd;
-      --text-color: #444;
+      --primary: #1a1a1a;
+      --accent: #b08968;
+      --bg: #fdfdfd;
+      --white: #ffffff;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--primary); line-height: 1.7; }
 
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background: var(--light-bg);
-      color: var(--text-color);
-      line-height: 1.6;
-      scroll-behavior: smooth;
-    }
-
-    /* NAVBAR */
+    /* Navigation - Transparent to Solid */
     nav {
-      background: #fff;
-      padding: 20px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      position: fixed; width: 100%; padding: 25px 8%;
+      display: flex; justify-content: space-between; align-items: center;
+      background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
+      z-index: 1000; transition: 0.4s; border-bottom: 1px solid rgba(0,0,0,0.05);
     }
+    .logo { font-family: 'Playfair Display', serif; font-size: 24px; letter-spacing: 2px; }
+    .logo span { color: var(--accent); }
+    nav ul { display: flex; gap: 35px; list-style: none; }
+    nav a { text-decoration: none; color: var(--primary); font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
-    .logo { font-weight: 600; font-size: 22px; text-transform: uppercase; letter-spacing: 2px; }
-    .logo span { color: var(--accent-color); }
-
-    nav ul { display: flex; gap: 25px; list-style: none; }
-    nav ul li a { text-decoration: none; color: var(--primary-color); font-size: 13px; font-weight: 400; text-transform: uppercase; transition: 0.3s; }
-    nav ul li a:hover { color: var(--accent-color); }
-
-    /* HERO SECTION */
+    /* Hero Section - Full Height & Impact */
     .hero {
-      height: 85vh;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                  url('https://images.unsplash.com/photo-1611048267451-e6ed91c9d06c?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center; text-align: center; color: var(--white);
+    }
+    .hero-content h1 { font-family: 'Playfair Display', serif; font-size: clamp(40px, 8vw, 80px); margin-bottom: 20px; }
+    .hero-content p { font-size: 18px; font-weight: 300; margin-bottom: 40px; letter-spacing: 2px; text-transform: uppercase; }
+    .btn-explore { 
+      padding: 15px 45px; border: 1px solid var(--white); color: var(--white); 
+      text-decoration: none; text-transform: uppercase; font-size: 12px; letter-spacing: 2px; transition: 0.4s;
+    }
+    .btn-explore:hover { background: var(--white); color: var(--primary); }
+
+    /* Services - Minimal Cards */
+    section { padding: 120px 10%; }
+    .section-title { text-align: center; margin-bottom: 80px; }
+    .section-title h2 { font-family: 'Playfair Display', serif; font-size: 40px; position: relative; padding-bottom: 15px; }
+    .section-title h2::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 2px; background: var(--accent); }
+
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    .s-card { background: var(--white); padding: 60px 40px; border: 1px solid #f0f0f0; transition: 0.4s; }
+    .s-card:hover { border-color: var(--accent); transform: translateY(-5px); }
+    .s-card h3 { font-size: 16px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+
+    /* Gallery - Masonry Style */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 20px; }
+    .gallery img { 
+      width: 100%; height: 450px; object-fit: cover; 
+      transition: 0.8s cubic-bezier(0.2, 1, 0.3, 1); cursor: pointer;
+    }
+    .gallery img:hover { transform: scale(1.03); filter: brightness(0.9); }
+
+    /* Form Section - Clean & Centered */
+    .upload-section { background: #f8f8f8; }
+    .upload-box { max-width: 500px; margin: 0 auto; text-align: center; }
+    .upload-box input { 
+      width: 100%; padding: 15px; margin-bottom: 20px; border: none; border-bottom: 1px solid #ccc; 
+      background: transparent; outline: none; font-family: inherit;
+    }
+    .upload-box input:focus { border-bottom-color: var(--accent); }
+    .btn-send { 
+      width: 100%; padding: 18px; background: var(--primary); color: var(--white); 
+      border: none; text-transform: uppercase; letter-spacing: 2px; font-weight: 600; cursor: pointer; transition: 0.4s;
+    }
+    .btn-send:hover { background: var(--accent); }
+
+    /* Floating WhatsApp */
+    .wa-link { 
+      position: fixed; bottom: 40px; right: 40px; background: #25D366; color: white; 
+      width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 10px 20px rgba(0,0,0,0.1); z-index: 1000; font-size: 24px;
     }
 
-    .hero h1 { font-size: clamp(32px, 5vw, 60px); font-weight: 600; margin-bottom: 20px; text-transform: uppercase; }
-    .hero p { font-size: 18px; font-weight: 300; margin-bottom: 30px; }
+    @media (max-width: 768px) {
+      nav { padding: 20px 5%; flex-direction: column; gap: 15px; }
+      nav ul { gap: 15px; }
+    }
+  </style>
+</head>
+<body>
 
-    /* SECTIONS */
-    section { padding: 100px 10%; }
-    h2 { text-align: center; font-size: 32px; margin-bottom: 60px; text-transform: uppercase; letter-spacing: 1px; }
+  <nav id="navbar">
+    <div class="logo">URBAN <span>TIMBER</span></div>
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#gallery">Projets</a></li>
+      <li><a href="#upload">Partage</a></li>
+    </ul>
+  </nav>
 
-    /* SERVICES */
-    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; }
-    .card { background: #fff; padding: 50px 30px; text-align: center; border: 1px solid #eee; transition: 0.3s; }
-    .
+  <header class="hero">
+    <div class="hero-content">
+      <p>Artisanat & Modernité</p>
+      <h1>L'Art du Bois</h1>
+      <a href="#gallery" class="btn-explore">Voir nos oeuvres</a>
+    </div>
+  </header>
+
+  <section id="gallery">
+    <div class="section-title">
+      <h2>Nos Réalisations</h2>
+    </div>
+    <div class="gallery">
+      </div>
+  </section>
+
+  <section id="upload" class="upload-section">
+    <div class="upload-box">
+      <div class="section-title">
+        <h2>Partagez un Projet</h2>
+      </div>
+      <form id="uploadForm">
+        <input type="text" id="userName" placeholder="VOTRE NOM" required>
+        <input type="url" id="imgUrl" placeholder="LIEN DE L'IMAGE (URL)" required>
+        <button type="submit" id="submitBtn" class="btn-send">Envoyer pour validation</button>
+      </form>
+    </div>
+  </section>
+
+  <footer style="padding: 60px; text-align: center; background: #111; color: #555; font-size: 12px; letter-spacing: 1px;">
+    &copy; 2026 URBAN TIMBER - SALÉ / SIDI BOUKNADEL. TOUS DROITS RÉSERVÉS.
+  </footer>
+
+  <a href="https://wa.me/212666970681" class="wa-link" target="_blank">💬</a>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCLmeMTvTFck1NCpdqdI5H8fLc8HIPup1U",
+      authDomain: "urbantimber-ebcec.firebaseapp.com",
+      projectId: "urbantimber-ebcec",
+      storageBucket: "urbantimber-ebcec.firebasestorage.app",
+      appId: "1:586135452772:web:81166e289ad37fa8a5f371"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    // إرسال البيانات
+    document.getElementById('uploadForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submitBtn');
+      btn.innerText = "ENVOI...";
+      
+      try {
+        await db.collection("projets").add({
+          userName: document.getElementById('userName').value,
+          imageUrl: document.getElementById('imgUrl').value,
+          status: "pending",
+          createdAt: firebase.firestore.FieldValue.serverTimestamp()
+        });
+        alert("Merci ZINO ! Reçu.");
+        e.target.reset();
+      } catch (e) { alert(e.message); }
+      btn.innerText = "ENVOYER POUR VALIDATION";
+    };
+
+    // عرض الصور (بترتيب زمني)
+    db.collection("projets").where("status", "==", "approved").orderBy("createdAt", "desc")
+      .onSnapshot(snap => {
+        const gallery = document.querySelector('.gallery');
+        gallery.innerHTML = "";
+        snap.forEach(doc => {
+          const img = document.createElement('img');
+          img.src = doc.data().imageUrl;
+          gallery.appendChild(img);
+        });
+      }, err => {
+          console.log("Tip: Activate Index in Firebase Console if gallery is empty.");
+      });
+  </script>
+</body>
+</html>
