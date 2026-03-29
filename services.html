@@ -10,15 +10,13 @@
         * { margin:0; padding:0; box-sizing:border-box; }
         body { font-family: 'Inter', sans-serif; background: var(--bg); color:#333; line-height: 1.6; }
         
-        /* Nav */
         nav { background: #fff; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; }
         .logo { font-family:'Playfair Display'; font-size:20px; font-weight:700; text-transform: uppercase; }
         .logo span { color: var(--accent); }
 
-        /* Hero */
         .hero-small { 
             height: 40vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1611269154421-4e27233ac5c7?q=80&w=1200'); /* صورة هيرو فخمة ومباشرة */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1581417478175-a9ef18f210c1?q=80&w=1200');
             background-size: cover;
             background-position: center;
             color: white; 
@@ -30,7 +28,6 @@
         }
         .hero-small h1 { font-family: 'Playfair Display'; font-size: 36px; margin-bottom: 10px; }
 
-        /* Content */
         .content { padding: 60px 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; }
         
         .box { 
@@ -41,25 +38,16 @@
             transition: 0.3s;
         }
         .box:hover { transform: translateY(-10px); }
-        
-        .box img { width: 100%; height: 250px; object-fit: cover; }
+        .box img { width: 100%; height: 280px; object-fit: cover; background: #eee; }
         
         .box-text { padding: 25px; }
-        .box h2 { color: var(--primary); font-family: 'Playfair Display'; font-size: 24px; margin-bottom: 15px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
+        .box h2 { color: var(--primary); font-family: 'Playfair Display'; font-size: 22px; margin-bottom: 15px; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; }
         .box p { color: #666; font-size: 14px; }
 
         .back-btn { 
-            text-decoration: none; 
-            color: var(--primary); 
-            font-weight: 600; 
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            display: inline-block; 
-            margin-top: 40px;
-            padding: 10px 20px;
-            border: 1px solid var(--primary);
-            transition: 0.3s;
+            text-decoration: none; color: var(--primary); font-weight: 600; font-size: 12px;
+            text-transform: uppercase; letter-spacing: 2px; display: inline-block; 
+            margin-top: 40px; padding: 10px 20px; border: 1px solid var(--primary); transition: 0.3s;
         }
         .back-btn:hover { background: var(--primary); color: white; }
 
@@ -74,39 +62,71 @@
 
     <div class="hero-small">
         <h1>Nos Services</h1>
-        <p style="text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">Expertise et Qualité - Menuiserie Fine</p>
+        <p style="text-transform: uppercase; font-size: 12px; letter-spacing: 2px;">L'excellence de la menuiserie artisanale</p>
     </div>
 
     <div class="content">
         <div class="box">
-            <img src="https://images.unsplash.com/photo-1615873968403-89e068629275?q=80&w=600" alt="Cuisines"> 
+            <img src="https://images.unsplash.com/photo-1556912177-466f98ce89ae?q=80&w=800" alt="Cuisine">
             <div class="box-text">
                 <h2>Cuisines Modernes</h2>
-                <p>Conception et installation de cuisines sur mesure, alliant esthétique moderne et fonctionnalité optimale pour votre maison.</p>
+                <p>Cuisines équipées sur mesure avec des finitions en bois noble et design contemporain.</p>
             </div>
         </div>
 
         <div class="box">
-            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?q=80&w=600" alt="Dressings"> 
+            <img src="https://images.unsplash.com/photo-1558603668-6570496b66f8?q=80&w=800" alt="Dressing">
             <div class="box-text">
                 <h2>Dressings & Placards</h2>
-                <p>Solutions de rangement intelligentes. Des dressings personnalisés qui maximisent votre espace avec une finition haut de gamme.</p>
+                <p>Optimisation intelligente de l'espace pour vos vêtements et accessoires.</p>
             </div>
         </div>
 
         <div class="box">
-            <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae?q=80&w=600" alt="Décoration"> 
+            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=800" alt="Salon">
             <div class="box-text">
                 <h2>Décoration Intérieure</h2>
-                <p>Habillage mural en bois, plafonds décoratifs et séparation d'espaces pour donner du caractère à vos villas et appartements.</p>
+                <p>Habillage mural et faux plafonds en bois pour une ambiance chaleureuse.</p>
             </div>
         </div>
 
         <div class="box">
-            <img src="https://images.unsplash.com/photo-1599619351208-3e6c839d7824?q=80&w=600" alt="Mobilier"> 
+            <img src="https://images.unsplash.com/photo-1532372320572-cda25653a26d?q=80&w=800" alt="Mobilier">
             <div class="box-text">
-                <h2>Mobilier sur Mesure</h2>
-                <p>Tables, consoles, et meubles TV uniques créés selon vos besoins spécifiques et avec les meilleures essences de bois.</p>
+                <h2>Mobilier Design</h2>
+                <p>Tables de salle à manger, consoles et bibliothèques uniques sur mesure.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?q=80&w=800" alt="Portes">
+            <div class="box-text">
+                <h2>Portes d'Entrée</h2>
+                <p>Portes massives sécurisées et esthétiques pour villas et appartements.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?q=80&w=800" alt="Bureau">
+            <div class="box-text">
+                <h2>Espaces Bureau</h2>
+                <p>Aménagement de bureaux professionnels et coins travail à domicile.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=800" alt="Chambre">
+            <div class="box-text">
+                <h2>Chambres à Coucher</h2>
+                <p>Lits massifs و têtes de lit personnalisées pour un confort absolu.</p>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="https://images.unsplash.com/photo-1560185127-6ed189bf02f4?q=80&w=800" alt="Escaliers">
+            <div class="box-text">
+                <h2>Escaliers en Bois</h2>
+                <p>Conception d'escaliers artisanaux robustes avec des finitions soignées.</p>
             </div>
         </div>
     </div>
